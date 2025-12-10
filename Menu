@@ -82,7 +82,7 @@ abstract class Sistemas
                 Console.WriteLine("..."); //CT e MAIN vai implementar
                 break;
             case "2":
-                Console.WriteLine("Nas profundezas insondáveis do Subterrâneo, você desperta como prisioneiro dos drows — acorrentado, desarmado e à mercê da sacerdotisa Ilvara Mizzrym. O posto avançado de Velkynvelve é apenas o início de uma jornada perigosa que atravessa cavernas colossais, lagos intermináveis e a loucura crescente que ameaça corromper todo o reino subterrâneo. Entre criaturas hostis, demônios errantes e facções desesperadas pelo controle, você descobrirá que escapar é apenas a primeira etapa. O verdadeiro objetivo é simples e brutal: encontrar um caminho de volta à superfície. Retornar à luz, à liberdade, ao mundo que ficou para trás Mas cada túnel, cada cidade subterrânea e cada sombra viva parece conspirar para impedir essa fuga. Nada no Subterrâneo permite que um prisioneiro simplesmente vá embora. Rumores de algo maior e terrível rondam as profundezas, distorcendo mentes e despertando forças além da compreensão mortal. A cada passo, fica claro que a escuridão não quer apenas mantê-lo cativo — ela quer quebrá-lo. Esta é uma aventura de sobrevivência, escolhas difíceis e alianças improváveis em um cenário onde a escuridão é viva — e está sempre observando. Escapar do Subterrâneo será um feito possível… mas jamais fácil."); 
+                Console.WriteLine("Nas profundezas insondaveis do Subterraneo, voce desperta como prisioneiro dos drows - acorrentado, desarmado e a merce da sacerdotisa Ilvara Mizzrym. O posto avancado de Velkynvelve e apenas o inicio de uma jornada perigosa que atravessa cavernas colossais, lagos interminaveis e a loucura crescente que ameaca corromper todo o reino subterraneo. Entre criaturas hostis, demonios errantes e faccoes desesperadas pelo controle, voce descobrira que escapar e apenas a primeira etapa. O verdadeiro objetivo e simples e brutal: encontrar um caminho de volta a superficie. Retornar a luz, a liberdade, ao mundo que ficou para tras Mas cada tunel, cada cidade subterranea e cada sombra viva parece conspirar para impedir essa fuga. Nada no Subterraneo permite que um prisioneiro simplesmente va embora. Rumores de algo maior e terrivel rondam as profundezas, distorcendo mentes e despertando forcas alem da compreensao mortal. A cada passo, fica claro que a escuridao nao quer apenas mante-lo cativo - ela quer quebra-lo. Esta e uma aventura de sobrevivencia, escolhas dificeis e aliancas improvaveis em um cenario onde a escuridao e viva - e esta sempre observando. Escapar do Subterraneo sera um feito possivel... mas jamais facil."); 
                 break;
             case "3":
                 Console.WriteLine(creditos); //sofrerá alteracoes
@@ -96,12 +96,63 @@ abstract class Sistemas
 
         }      
     }
+    
+    public static void CenaInicial() 
+    {
+    Console.WriteLine("O personagem comeca a aventura na cela de escravos de Velkynvelve. Despido de tudo, exceto sua roupa de baixo, ele esta a merce dos elfos negros e na companhia de outros prisioneiros, muitos dos quais nao sao o que parecem");
+    }
+    
+    public void Cena___() 
+    {
+    Console.WriteLine("...");
+    }
+  
+  public static void Final(bool vitoria, int pontuacaoFinal)
+    {
+        Console.Clear();
+        
+       
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.WriteLine("==================================================");
+        Console.WriteLine("                   FIM DE JOGO                    ");
+        Console.WriteLine("==================================================");
+        Console.ResetColor();
+        
+       
+        if (vitoria)
+        {
+            
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("\n PARABENS, HEROI! VOCE CONSEGUIU! ");
+            Console.WriteLine("A luz venceu a escuridao. O reino esta em paz.");
+        }
+        else
+        {
+           
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("\n FIM DA JORNADA... ");
+            Console.WriteLine("Voce foi derrotado. O mal prevaleceu.");
+        }
+        Console.ResetColor();
+
+        
+        Console.ForegroundColor = ConsoleColor.Cyan;
+        Console.WriteLine("\n--- Resumo ---");
+        Console.WriteLine($"\nPontuacaoo Final: {pontuacaoFinal}");
+        Console.ResetColor();
+
+       
+        Console.WriteLine("\n==================================================");
+        Console.WriteLine("Pressione QUALQUER TECLA para sair...");
+        Console.ReadKey();
+    }
+  
 }
 
 class Principal 
 {
     static void Main() 
     {
-    Sistemas.Menu(); // teste
+    Sistemas.Final(true, 30); // teste
     }
 }
